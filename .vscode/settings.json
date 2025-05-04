@@ -4,6 +4,7 @@
         "*.layout-template": "vue",
         "*.vue": "vue",
         "iostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "cmath": "cpp"
     }
 }
