@@ -15,6 +15,10 @@ staticAccess: .outputFolder
 	clang -std=c++17 -lstdc++ staticAccess.cpp -o out/staticAccess
 	./out/staticAccess
 
+staticAccess1: .outputFolder
+	clang -std=c++17 -lstdc++ staticAccess1.cpp -o out/staticAccess1
+	./out/staticAccess1	
+
 pureFunction: .outputFolder
 	clang -std=c++17 -lstdc++ pureFunction.cpp -o out/pureFunction
 	./out/pureFunction
