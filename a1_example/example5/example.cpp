@@ -26,9 +26,9 @@ int main()
   const int a = 2;
   const ikosaeder i = calculate(a);
   cout << "Volumen:" << i.Volumen 
-       << " Oberfläche:" << i.Oberfläche 
-       << " Inkreisradius:" << i.Inkreisradius 
-       << " Umkreisradius:" << i.Umkreisradius 
-       << endl;
+        << " Oberfläche:" << i.Oberfläche 
+        << " Inkreisradius:" << i.Inkreisradius 
+        << " Umkreisradius:" << i.Umkreisradius 
+        << endl;
   return 0;
 }

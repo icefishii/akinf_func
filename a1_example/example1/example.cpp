@@ -28,6 +28,9 @@ int main()
   const int b = 3;
   const int c = 4;
   const quader q = calculate(a, b, c);
-  cout << "Volumen:" << q.Volumen << " Oberfläche:" << q.Oberfläche << " Diagonale:" << q.Diagonale << endl;
+  cout << "Volumen:" << q.Volumen 
+        << " Oberfläche:" << q.Oberfläche 
+        << " Diagonale:" << q.Diagonale 
+        << endl;
   return 0;
 }

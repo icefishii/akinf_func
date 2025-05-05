@@ -28,10 +28,10 @@ int main()
   const int a = 2;
   const wuerfel w = calculate(a);
   cout << "Volumen:" << w.Volumen 
-       << " Oberfläche:" << w.Oberfläche 
-       << " Diagonale:" << w.Diagonale 
-       << " Inkreisradius:" << w.Inkreisradius 
-       << " Umkreisradius:" << w.Umkreisradius 
-       << endl;
+        << " Oberfläche:" << w.Oberfläche 
+        << " Diagonale:" << w.Diagonale 
+        << " Inkreisradius:" << w.Inkreisradius 
+        << " Umkreisradius:" << w.Umkreisradius 
+        << endl;
   return 0;
 }

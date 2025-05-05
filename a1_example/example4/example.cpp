@@ -27,9 +27,9 @@ int main()
   const int a = 2;
   const oktaeder o = calculate(a);
   cout << "Volumen:" << o.Volumen 
-       << " Oberfläche:" << o.Oberfläche 
-       << " Inkreisradius:" << o.Inkreisradius 
-       << " Umkreisradius:" << o.Umkreisradius 
-       << endl;
+        << " Oberfläche:" << o.Oberfläche 
+        << " Inkreisradius:" << o.Inkreisradius 
+        << " Umkreisradius:" << o.Umkreisradius 
+        << endl;
   return 0;
 }

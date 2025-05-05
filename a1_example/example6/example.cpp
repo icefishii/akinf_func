@@ -26,9 +26,9 @@ int main()
   const int a = 2;
   const dodekaeder d = calculate(a);
   cout << "Volumen:" << d.Volumen 
-       << " Oberfläche:" << d.Oberfläche 
-       << " Inkreisradius:" << d.Inkreisradius 
-       << " Umkreisradius:" << d.Umkreisradius 
-       << endl;
+        << " Oberfläche:" << d.Oberfläche 
+        << " Inkreisradius:" << d.Inkreisradius 
+        << " Umkreisradius:" << d.Umkreisradius 
+        << endl;
   return 0;
 }

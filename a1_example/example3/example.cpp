@@ -27,9 +27,9 @@ int main()
   const int a = 2;
   const tetraeder t = calculate(a);
   cout << "Volumen:" << t.Volumen 
-       << " Oberfläche:" << t.Oberfläche 
-       << " Inkreisradius:" << t.Inkreisradius 
-       << " Umkreisradius:" << t.Umkreisradius 
-       << endl;
+        << " Oberfläche:" << t.Oberfläche 
+        << " Inkreisradius:" << t.Inkreisradius 
+        << " Umkreisradius:" << t.Umkreisradius 
+        << endl;
   return 0;
 }
