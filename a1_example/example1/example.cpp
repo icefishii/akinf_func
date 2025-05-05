@@ -15,7 +15,11 @@ struct quader
 // calculate funktion returned ein struct, es gibt keinen quader der verändert wird
 quader calculate(const int a, const int b, const int c)
 {
-  return {a * b * c, 2 * (a * b + a * c + b * c), static_cast<float>(sqrt(a * a + b * b + c * c))};
+  return {
+    a * b * c, // Volumen
+    2 * (a * b + a * c + b * c), // Oberfläche
+    static_cast<float>(sqrt(a * a + b * b + c * c)) // Diagonale
+  };
 }
 
 int main()
