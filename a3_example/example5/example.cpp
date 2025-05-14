@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -39,14 +40,25 @@ auto calculate = [](int a)
       umkreisradius(a)};
 };
 
+// Curried lambda for output
+auto output = [](float volumen)
+{
+  return [=](float oberflaeche)
+  {
+    return [=](float inkreisradius)
+    {
+      return [=](float umkreisradius)
+      {
+        return string("Volumen:") + to_string(volumen) + " Oberfläche:" + to_string(oberflaeche) + " Inkreisradius:" + to_string(inkreisradius) + " Umkreisradius:" + to_string(umkreisradius);
+      };
+    };
+  };
+};
+
 int main()
 {
   const int a = 2;
   const ikosaeder i = calculate(a);
-  cout << "Volumen:" << i.Volumen
-       << " Oberfläche:" << i.Oberfläche
-       << " Inkreisradius:" << i.Inkreisradius
-       << " Umkreisradius:" << i.Umkreisradius
-       << endl;
+  cout << output(i.Volumen)(i.Oberfläche)(i.Inkreisradius)(i.Umkreisradius) << endl;
   return 0;
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -45,15 +46,28 @@ auto calculate = [](int a)
       umkreisradius(a)};
 };
 
+// Curried lambda for output
+auto output = [](int volumen)
+{
+  return [=](int oberflaeche)
+  {
+    return [=](float diagonale)
+    {
+      return [=](float inkreisradius)
+      {
+        return [=](float umkreisradius)
+        {
+          return string("Volumen:") + to_string(volumen) + " Oberfläche:" + to_string(oberflaeche) + " Diagonale:" + to_string(diagonale) + " Inkreisradius:" + to_string(inkreisradius) + " Umkreisradius:" + to_string(umkreisradius);
+        };
+      };
+    };
+  };
+};
+
 int main()
 {
   const int a = 2;
   const wuerfel w = calculate(a);
-  cout << "Volumen:" << w.Volumen
-       << " Oberfläche:" << w.Oberfläche
-       << " Diagonale:" << w.Diagonale
-       << " Inkreisradius:" << w.Inkreisradius
-       << " Umkreisradius:" << w.Umkreisradius
-       << endl;
+  cout << output(w.Volumen)(w.Oberfläche)(w.Diagonale)(w.Inkreisradius)(w.Umkreisradius) << endl;
   return 0;
 }
