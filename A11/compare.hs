@@ -13,6 +13,7 @@ main = do
     -- Define a list of Name objects
     let names = [Name "John" "Smith", Name "Alex" "Balboa"]
     
+    
     -- Sort the names by firstName
     let sortedNames = sortBy compareByFirstName names
     
