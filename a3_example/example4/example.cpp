@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// Immutable struct to hold the results
 struct oktaeder
 {
   const float Volumen;
@@ -13,7 +12,6 @@ struct oktaeder
   const float Umkreisradius;
 };
 
-// Individual lambdas for each calculation
 auto volumen = [](int a)
 {
   return static_cast<float>(pow(a, 3) * sqrt(2) / 3);
@@ -31,7 +29,6 @@ auto umkreisradius = [](int a)
   return static_cast<float>(a * sqrt(2) / 2);
 };
 
-// Pure, immutable lambda for calculate
 auto calculate = [](int a)
 {
   return oktaeder{
@@ -41,7 +38,6 @@ auto calculate = [](int a)
       umkreisradius(a)};
 };
 
-// Curried lambda for output
 auto output = [](float volumen)
 {
   return [=](float oberflaeche)

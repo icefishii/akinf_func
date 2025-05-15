@@ -11,7 +11,6 @@ struct quader
   const float Diagonale;
 };
 
-// Individual lambdas for each calculation
 auto volumen = [](int a, int b, int c)
 {
   return a * b * c;
@@ -25,7 +24,6 @@ auto diagonale = [](int a, int b, int c)
   return static_cast<float>(sqrt(a * a + b * b + c * c));
 };
 
-// Curried lambda for calculate
 auto calculate = [](int a)
 {
   return [=](int b)
@@ -40,7 +38,6 @@ auto calculate = [](int a)
   };
 };
 
-// Curried lambda for output
 auto output = [](int volumen)
 {
   return [=](int oberflaeche)

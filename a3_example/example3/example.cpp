@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// Immutable struct to hold the results
 struct tetraeder
 {
   const float Volumen;
@@ -13,7 +12,6 @@ struct tetraeder
   const float Umkreisradius;
 };
 
-// Individual lambdas for each calculation
 auto volumen = [](int a)
 {
   return static_cast<float>(pow(a, 3) * sqrt(2) / 12);
@@ -31,7 +29,6 @@ auto umkreisradius = [](int a)
   return static_cast<float>(a * sqrt(6) / 4);
 };
 
-// Pure, immutable lambda for calculate
 auto calculate = [](int a)
 {
   return tetraeder{

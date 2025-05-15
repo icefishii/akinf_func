@@ -12,7 +12,6 @@ struct dodekaeder
   const float Umkreisradius;
 };
 
-// Individual lambdas for each calculation
 auto volumen = [](int a)
 {
   return static_cast<float>(pow(a, 3) * (15 + 7 * sqrt(5)) / 4.0);
@@ -30,7 +29,6 @@ auto umkreisradius = [](int a)
   return static_cast<float>(a * sqrt(3) * (1 + sqrt(5)) / 4.0);
 };
 
-// Pure, immutable lambda for calculate
 auto calculate = [](int a)
 {
   return dodekaeder{
@@ -40,7 +38,6 @@ auto calculate = [](int a)
       umkreisradius(a)};
 };
 
-// Curried lambda for output
 auto output = [](float volumen)
 {
   return [=](float oberflaeche)

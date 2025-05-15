@@ -12,8 +12,6 @@ struct wuerfel
   const float Inkreisradius;
   const float Umkreisradius;
 };
-
-// Individual lambdas for each calculation
 auto volumen = [](int a)
 {
   return static_cast<int>(pow(a, 3));
@@ -35,7 +33,6 @@ auto umkreisradius = [](int a)
   return static_cast<float>(a / 2.0);
 };
 
-// Pure, immutable lambda for calculate
 auto calculate = [](int a)
 {
   return wuerfel{
@@ -46,7 +43,6 @@ auto calculate = [](int a)
       umkreisradius(a)};
 };
 
-// Curried lambda for output
 auto output = [](int volumen)
 {
   return [=](int oberflaeche)

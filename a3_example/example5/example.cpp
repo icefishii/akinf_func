@@ -12,7 +12,6 @@ struct ikosaeder
   const float Umkreisradius;
 };
 
-// Individual lambdas for each calculation
 auto volumen = [](int a)
 {
   return static_cast<float>(5 * pow(a, 3) * (3 + sqrt(5)) / 12);
@@ -30,7 +29,6 @@ auto umkreisradius = [](int a)
   return static_cast<float>(a / 4.0 * sqrt(2 * (5 + sqrt(5))));
 };
 
-// Pure, immutable lambda for calculate
 auto calculate = [](int a)
 {
   return ikosaeder{
@@ -40,7 +38,6 @@ auto calculate = [](int a)
       umkreisradius(a)};
 };
 
-// Curried lambda for output
 auto output = [](float volumen)
 {
   return [=](float oberflaeche)
