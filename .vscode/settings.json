@@ -5,6 +5,8 @@
         "*.vue": "vue",
         "iostream": "cpp",
         "vector": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "string": "cpp",
+        "xstring": "cpp"
     }
 }

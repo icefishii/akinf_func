@@ -11,24 +11,24 @@ struct quader
   const float Diagonale;
 };
 
-auto volumen = [](int a, int b, int c)
+auto volumen = [](const int a, const int b, const int c)
 {
   return a * b * c;
 };
-auto oberflaeche = [](int a, int b, int c)
+auto oberflaeche = [](const int a, const int b, const int c)
 {
   return 2 * (a * b + a * c + b * c);
 };
-auto diagonale = [](int a, int b, int c)
+auto diagonale = [](const int a, const int b, const int c)
 {
   return static_cast<float>(sqrt(a * a + b * b + c * c));
 };
 
-auto calculate = [](int a)
+auto calculate = [](const int a)
 {
-  return [=](int b)
+  return [=](const int b)
   {
-    return [=](int c)
+    return [=](const int c)
     {
       return quader{
           volumen(a, b, c),

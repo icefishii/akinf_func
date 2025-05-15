@@ -12,24 +12,24 @@ struct tetraeder
   const float Umkreisradius;
 };
 
-auto volumen = [](int a)
+auto volumen = [](const int a)
 {
   return static_cast<float>(pow(a, 3) * sqrt(2) / 12);
 };
-auto oberflaeche = [](int a)
+auto oberflaeche = [](const int a)
 {
   return static_cast<float>(pow(a, 2) * sqrt(3));
 };
-auto inkreisradius = [](int a)
+auto inkreisradius = [](const int a)
 {
   return static_cast<float>(a * sqrt(6) / 12);
 };
-auto umkreisradius = [](int a)
+auto umkreisradius = [](const int a)
 {
   return static_cast<float>(a * sqrt(6) / 4);
 };
 
-auto calculate = [](int a)
+auto calculate = [](const int a)
 {
   return tetraeder{
       volumen(a),
@@ -39,13 +39,13 @@ auto calculate = [](int a)
 };
 
 // Curried lambda for output
-auto output = [](float volumen)
+auto output = [](const float volumen)
 {
-  return [=](float oberflaeche)
+  return [=](const float oberflaeche)
   {
-    return [=](float inkreisradius)
+    return [=](const float inkreisradius)
     {
-      return [=](float umkreisradius)
+      return [=](const float umkreisradius)
       {
         return string("Volumen:") + to_string(volumen) + " Oberfläche:" + to_string(oberflaeche) + " Inkreisradius:" + to_string(inkreisradius) + " Umkreisradius:" + to_string(umkreisradius);
       };

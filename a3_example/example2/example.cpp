@@ -12,28 +12,28 @@ struct wuerfel
   const float Inkreisradius;
   const float Umkreisradius;
 };
-auto volumen = [](int a)
+auto volumen = [](const int a)
 {
   return static_cast<int>(pow(a, 3));
 };
-auto oberflaeche = [](int a)
+auto oberflaeche = [](const int a)
 {
   return static_cast<int>(6 * pow(a, 2));
 };
-auto diagonale = [](int a)
+auto diagonale = [](const int a)
 {
   return static_cast<float>(a * sqrt(3));
 };
-auto inkreisradius = [](int a)
+auto inkreisradius = [](const int a)
 {
   return static_cast<float>(a / 2.0 * sqrt(3));
 };
-auto umkreisradius = [](int a)
+auto umkreisradius = [](const int a)
 {
   return static_cast<float>(a / 2.0);
 };
 
-auto calculate = [](int a)
+auto calculate = [](const int a)
 {
   return wuerfel{
       volumen(a),
@@ -43,15 +43,15 @@ auto calculate = [](int a)
       umkreisradius(a)};
 };
 
-auto output = [](int volumen)
+auto output = [](const int volumen)
 {
-  return [=](int oberflaeche)
+  return [=](const int oberflaeche)
   {
-    return [=](float diagonale)
+    return [=](const float diagonale)
     {
-      return [=](float inkreisradius)
+      return [=](const float inkreisradius)
       {
-        return [=](float umkreisradius)
+        return [=](const float umkreisradius)
         {
           return string("Volumen:") + to_string(volumen) + " Oberfläche:" + to_string(oberflaeche) + " Diagonale:" + to_string(diagonale) + " Inkreisradius:" + to_string(inkreisradius) + " Umkreisradius:" + to_string(umkreisradius);
         };

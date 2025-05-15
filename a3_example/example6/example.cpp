@@ -12,19 +12,19 @@ struct dodekaeder
   const float Umkreisradius;
 };
 
-auto volumen = [](int a)
+auto volumen = [](const int a)
 {
   return static_cast<float>(pow(a, 3) * (15 + 7 * sqrt(5)) / 4.0);
 };
-auto oberflaeche = [](int a)
+auto oberflaeche = [](const int a)
 {
   return static_cast<float>(3 * pow(a, 2) * sqrt(5 * (5 + 2 * sqrt(5))));
 };
-auto inkreisradius = [](int a)
+auto inkreisradius = [](const int a)
 {
   return static_cast<float>(a * sqrt(10 * (25 + 11 * sqrt(5))) / 20.0);
 };
-auto umkreisradius = [](int a)
+auto umkreisradius = [](const int a)
 {
   return static_cast<float>(a * sqrt(3) * (1 + sqrt(5)) / 4.0);
 };
@@ -38,13 +38,13 @@ auto calculate = [](int a)
       umkreisradius(a)};
 };
 
-auto output = [](float volumen)
+auto output = [](const float volumen)
 {
-  return [=](float oberflaeche)
+  return [=](const float oberflaeche)
   {
-    return [=](float inkreisradius)
+    return [=](const float inkreisradius)
     {
-      return [=](float umkreisradius)
+      return [=](const float umkreisradius)
       {
         return string("Volumen:") + to_string(volumen) + " Oberfläche:" + to_string(oberflaeche) + " Inkreisradius:" + to_string(inkreisradius) + " Umkreisradius:" + to_string(umkreisradius);
       };
